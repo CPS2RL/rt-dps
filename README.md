@@ -18,3 +18,7 @@ We utilize this script to check how different scheduled-based attacks react to c
 
 # example_plot
 In the example_plot folder, we have a script to generate a schedule plot for the example used in our paper.
+
+
+# jitter_margin
+In the jitter_margin folder, we have a script to generate the stability curve for a DC motor control system.
