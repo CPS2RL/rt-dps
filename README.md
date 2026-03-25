@@ -14,3 +14,7 @@ We utilize this script to generate necessary data to calculate normalized attack
 
 ## delta_eta_sweep.py
 We utilize this script to check how different scheduled-based attacks react to changing the inter-arrival time sensitivity parameters.
+
+
+# Example Plot
+In the example_plot folder, we have a script to generate a schedule plot for the example used in our paper.
