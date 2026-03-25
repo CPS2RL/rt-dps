@@ -8,6 +8,6 @@ To generate the percentage of task sets vulnerable under DPS-only, TS-only, both
 ## ap_butterfly.py
 To generate the percentage of task sets vulnerable under DPS-only, TS-only, both, and neither category, we use this code. This code is used for butterfly attack simulation. We generate 200 task sets for utilization 0.1-0.8. We get the result in XLSX file format. Later we analyze the XLSX file to get our desired categorized percentage of attack.
 
-## normalized_ant_pos_pin.py
+## normalized.py
 We utilize this script to generate necessary data to calculate normalized attack percentage.
 
