@@ -11,3 +11,6 @@ To generate the percentage of task sets vulnerable under DPS-only, TS-only, both
 ## normalized.py
 We utilize this script to generate necessary data to calculate normalized attack percentage.
 
+
+## delta_eta_sweep.py
+We utilize this script to check how different scheduled-based attacks react to changing the inter-arrival time sensitivity parameters.
