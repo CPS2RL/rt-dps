@@ -1,5 +1,6 @@
-# rt-dps
-The code and readme file will be added later.
+# Understanding the Pitfalls of a Differentially Private Fixed-Priority Real-TimeScheduler
+This repository contains the source code for the submitted EMSOFT paper, "Understanding the Pitfallsof a Differentially Private
+Fixed-Priority Real-Time Scheduler".
 
 ## ap_ant_pos_pin.py
 To generate the percentage of task sets vulnerable under DPS-only, TS-only, both, and neither category, we use this code. In this code we have the option to change the period of the attacker task. This code is used for anterior, posterior, and pincer attack simulations. We generate 200 task sets for utilization 0.1-0.8. We get the result in XLSX file format. Later we analyze the XLSX file to get our desired categorized percentage of attack.
