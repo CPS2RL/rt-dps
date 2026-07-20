@@ -186,16 +186,16 @@ Let $`AS^{\mathrm{ts}}`$ and $`AS^{\mathrm{dps}}`$ denote the numbers of success
 
 The normalized attack likelihood under TS is defined as:
 
-$$`\chi^{\mathrm{ts}}=\frac{AS^{\mathrm{ts}}}{N^{\mathrm{ts}}}`,
+$$
+\chi^{\mathrm{ts}} =
+\frac{AS^{\mathrm{ts}}}{N^{\mathrm{ts}}}
 $$
 
 and the normalized attack likelihood under DPS is defined as:
 
 $$
-\chi^{\mathrm{dps}}
-===================
-
-\frac{AS^{\mathrm{dps}}}{N^{\mathrm{dps}}}.
+\chi^{\mathrm{dps}} =
+\frac{AS^{\mathrm{dps}}}{N^{\mathrm{dps}}}
 $$
 
 This normalization accounts for differences in the numbers of jobs released under TS and DPS, enabling a fair comparison of attack likelihood between the two schedulers.
