@@ -182,10 +182,7 @@ For each scheduler, we count the successful attack instances that satisfy the re
 * **Posterior attacks**
 * **Pincer attacks**
 
-Let 
-$$ 
-AS^{\mathrm{ts}} 
-$$ and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances under TS and DPS, respectively.
+Let $$`AS^{\mathrm{ts}}`$$ and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances under TS and DPS, respectively.
 
 The normalized attack likelihood under TS is defined as:
 
