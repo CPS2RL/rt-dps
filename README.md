@@ -10,10 +10,6 @@ This repository contains the source code and experiment scripts used to reproduc
 * [Objective of the Paper](#objective-of-the-paper)
 * [Attack Patterns](#attack-patterns)
 * [Repository Structure](#repository-structure)
-* [Environment Setup](#environment-setup)
-
-  * [Linux](#linux)
-  * [Windows](#windows)
 * [Running the Experiments](#running-the-experiments)
 
   * [Anterior, Posterior, and Pincer Attacks](#anterior-posterior-and-pincer-attacks)
@@ -47,7 +43,9 @@ This repository evaluates three schedule-based attack patterns:
 * **Anterior attack:** The attacker executes immediately before the victim.
 * **Posterior attack:** The attacker executes immediately after the victim.
 * **Pincer attack:** The same attacker job executes immediately before and immediately after the victim.
+* **Butterfly attack:** An adversary changes the arrival time of an attacker indirectly influence the system behaviour of the control task.
 
+  
 The experiments compare the occurrence of these attack patterns under Vanilla RM and DPS.
 
 ## Repository Structure
@@ -85,46 +83,6 @@ rt-dps/
 * `jitter_margin/jitter margin curve.ipynb`
   Generates the jitter-margin stability curve for the DC motor control-system example.
 
-## Environment Setup
-
-The experiments are implemented in Python. We recommend running them in a virtual environment.
-
-First, clone the repository:
-
-```bash
-git clone https://github.com/CPS2RL/rt-dps.git
-cd rt-dps
-```
-
-### Linux
-
-Create and activate a Python virtual environment:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-Install the required Python packages:
-
-```bash
-pip install pandas openpyxl matplotlib numpy scipy jupyter control
-```
-
-### Windows
-
-Create and activate a Python virtual environment:
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-Install the required Python packages:
-
-```bash
-pip install pandas openpyxl matplotlib numpy scipy jupyter control
-```
 
 ## Running the Experiments
 
