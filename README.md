@@ -156,29 +156,62 @@ The stability condition is evaluated using:
 R_best + alpha × (R_worst - R_best) ≤ beta
 ```
 
-### Normalized Attack Ratio
+### Normalized Attack Likelihood
 
-The `normalized.py` script calculates normalized attack metrics.
+The `normalized.py` script evaluates the likelihood of successful schedule-based attacks under the traditional scheduler (**TS**) and the differentially private scheduler (**DPS**).
 
-Instead of reporting only the total number of detected attack instances, the script normalizes the attack count using the number of attacker and victim jobs:
+Let (N_v^{\mathrm{ts}}) and (N_t^{\mathrm{ts}}) denote the numbers of jobs released by (\tau_v) and (\tau_t), respectively, during an observation window (H) under TS. Similarly, let (N_v^{\mathrm{dps}}) and (N_t^{\mathrm{dps}}) denote the corresponding numbers of jobs released under DPS.
 
-```text
-N = J_attacker + J_victim
-```
+The total number of relevant jobs under each scheduler is defined as:
 
-The normalized attack ratio is calculated as:
+$$
+N^{\mathrm{ts}} = N_v^{\mathrm{ts}} + N_t^{\mathrm{ts}},
+$$
 
-```text
-X = Number of attack instances / N
-```
+and
 
-Run the experiment using:
+$$
+N^{\mathrm{dps}} = N_v^{\mathrm{dps}} + N_t^{\mathrm{dps}}.
+$$
+
+The values of (N^{\mathrm{ts}}) and (N^{\mathrm{dps}}) are not necessarily equal. Under TS, task arrivals are deterministic, whereas DPS introduces noise into task inter-arrival times. Therefore, the two schedulers may release different numbers of jobs during the same observation window (H).
+
+For each scheduler, the script counts the successful attack instances that satisfy the required task-execution order for the following attacks:
+
+* Anterior attack
+* Posterior attack
+* Pincer attack
+
+Let (AS^{\mathrm{ts}}) and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances observed under TS and DPS, respectively.
+
+The normalized attack likelihood under TS is defined as:
+
+$$
+\chi^{\mathrm{ts}}
+==================
+
+\frac{AS^{\mathrm{ts}}}{N^{\mathrm{ts}}},
+$$
+
+and the normalized attack likelihood under DPS is defined as:
+
+$$
+\chi^{\mathrm{dps}}
+===================
+
+\frac{AS^{\mathrm{dps}}}{N^{\mathrm{dps}}}.
+$$
+
+This normalization accounts for differences in the numbers of jobs released by the two schedulers and enables a fair comparison of attack likelihood between TS and DPS.
+
+Run the normalized attack experiment using:
 
 ```bash
 python normalized.py
 ```
 
-The script stores individual task-set results and summary statistics for every utilization level.
+The script records the job counts, successful attack instances, and normalized attack likelihoods for TS and DPS. It stores both individual task-set results and aggregated statistics for each utilization level.
+
 
 ### Sensitivity-Parameter Sweep
 
