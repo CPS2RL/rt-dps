@@ -30,7 +30,7 @@ The experiments evaluate:
 
 1. Whether DPS creates or removes schedule-based attack opportunities.
 2. How frequently anterior, posterior, and pincer attack patterns occur.
-3. How attack intensity changes after normalization by the number of attacker and victim jobs.
+3. Check how frequently attacks appear within a task set.
 4. How the inter-arrival-time sensitivity parameter affects attack opportunities.
 
 
@@ -158,7 +158,7 @@ R_best + alpha × (R_worst - R_best) ≤ beta
 
 ### Normalized Attack Experiments
 
-The `normalized.py` script compares the normalized likelihood of successful schedule-based attacks under the traditional scheduler (**TS**) and the differentially private scheduler (**DPS**).
+The `normalized.py` script calculates normalized attack ratios to check how frequently attacks appear within a task set under the traditional scheduler (**TS**) and the differentially private scheduler (**DPS**).
 
 Let (N_v^{\mathrm{ts}}) and (N_t^{\mathrm{ts}}) denote the numbers of jobs released by tasks (\tau_v) and (\tau_t), respectively, during an observation window (H) under TS. Similarly, (N_v^{\mathrm{dps}}) and (N_t^{\mathrm{dps}}) denote the corresponding numbers of jobs released under DPS.
 
@@ -182,7 +182,7 @@ For each scheduler, we count the successful attack instances that satisfy the re
 * **Posterior attacks**
 * **Pincer attacks**
 
-Let (AS^{\mathrm{ts}}) and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances under TS and DPS, respectively.
+Let $$ AS^{\mathrm{ts}}$$ and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances under TS and DPS, respectively.
 
 The normalized attack likelihood under TS is defined as:
 
