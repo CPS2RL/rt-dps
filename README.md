@@ -71,19 +71,19 @@ rt-dps/
   Evaluates anterior, posterior, and pincer attack opportunities under Vanilla RM and DPS.
 
 * `ap_butterfly.py`
-  Evaluates response-time variation and control-stability violations under Vanilla RM and DPS.
+  Evaluates butterfly attack under Vanilla RM and DPS.
 
 * `normalized.py`
-  Calculates normalized attack ratios using the number of attacker and victim jobs.
+  Calculates normalized attack ratios to check how frequently attacks appear within a taskset.
 
 * `delta_eta_sweep_attack_plot.py`
   Evaluates how attack opportunities change as the inter-arrival-time sensitivity parameter, Δη, is varied.
 
 * `example_plot/example_timing_plot_generation.ipynb`
-  Generates the example schedule visualization used in the paper.
+  Generates the example plot used in the paper.
 
 * `jitter_margin/jitter margin curve.ipynb`
-  Generates the jitter-margin curve for the DC motor control-system example.
+  Generates the jitter-margin stability curve for the DC motor control-system example.
 
 ## Environment Setup
 
