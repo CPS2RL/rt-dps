@@ -160,7 +160,7 @@ R_best + alpha × (R_worst - R_best) ≤ beta
 
 The `normalized.py` script calculates normalized attack ratios to check how frequently attacks appear within a task set under the traditional scheduler (**TS**) and the differentially private scheduler (**DPS**).
 
-Let $$`(N_v^{\mathrm{ts}})`$$ and $$`(N_t^{\mathrm{ts}})`$$ denote the numbers of jobs released by tasks (\tau_v) and (\tau_t), respectively, during an observation window (H) under TS. Similarly, (N_v^{\mathrm{dps}}) and (N_t^{\mathrm{dps}}) denote the corresponding numbers of jobs released under DPS.
+Let $`(N_v^{\mathrm{ts}})`$ and $`(N_t^{\mathrm{ts}})`$ denote the numbers of jobs released by tasks $`\tau_v`$ and $`\tau_t`$, respectively, during an observation window (H) under TS. Similarly, $`N_v^{\mathrm{dps}}`$ and $`N_t^{\mathrm{dps}}`$ denote the corresponding numbers of jobs released under DPS.
 
 The total number of relevant jobs under each scheduler is:
 
@@ -182,15 +182,11 @@ For each scheduler, we count the successful attack instances that satisfy the re
 * **Posterior attacks**
 * **Pincer attacks**
 
-Let $$`AS^{\mathrm{ts}}`$$ and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances under TS and DPS, respectively.
+Let $`AS^{\mathrm{ts}}`$ and $`AS^{\mathrm{dps}}`$ denote the numbers of successful attack instances under TS and DPS, respectively.
 
 The normalized attack likelihood under TS is defined as:
 
-$$
-\chi^{\mathrm{ts}}
-==================
-
-\frac{AS^{\mathrm{ts}}}{N^{\mathrm{ts}}},
+$$`\chi^{\mathrm{ts}}=\frac{AS^{\mathrm{ts}}}{N^{\mathrm{ts}}}`,
 $$
 
 and the normalized attack likelihood under DPS is defined as:
