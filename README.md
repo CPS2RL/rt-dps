@@ -156,13 +156,15 @@ The stability condition is evaluated using:
 R_best + alpha × (R_worst - R_best) ≤ beta
 ```
 
-### Normalized Attack Likelihood
 
-The `normalized.py` script evaluates the likelihood of successful schedule-based attacks under the traditional scheduler (**TS**) and the differentially private scheduler (**DPS**).
 
-Let (N_v^{\mathrm{ts}}) and (N_t^{\mathrm{ts}}) denote the numbers of jobs released by (\tau_v) and (\tau_t), respectively, during an observation window (H) under TS. Similarly, let (N_v^{\mathrm{dps}}) and (N_t^{\mathrm{dps}}) denote the corresponding numbers of jobs released under DPS.
+### Normalized Attack Experiments
 
-The total number of relevant jobs under each scheduler is defined as:
+The `normalized.py` script compares the normalized likelihood of successful schedule-based attacks under the traditional scheduler (**TS**) and the differentially private scheduler (**DPS**).
+
+Let (N_v^{\mathrm{ts}}) and (N_t^{\mathrm{ts}}) denote the numbers of jobs released by tasks (\tau_v) and (\tau_t), respectively, during an observation window (H) under TS. Similarly, (N_v^{\mathrm{dps}}) and (N_t^{\mathrm{dps}}) denote the corresponding numbers of jobs released under DPS.
+
+The total number of relevant jobs under each scheduler is:
 
 $$
 N^{\mathrm{ts}} = N_v^{\mathrm{ts}} + N_t^{\mathrm{ts}},
@@ -174,15 +176,15 @@ $$
 N^{\mathrm{dps}} = N_v^{\mathrm{dps}} + N_t^{\mathrm{dps}}.
 $$
 
-The values of (N^{\mathrm{ts}}) and (N^{\mathrm{dps}}) are not necessarily equal. Under TS, task arrivals are deterministic, whereas DPS introduces noise into task inter-arrival times. Therefore, the two schedulers may release different numbers of jobs during the same observation window (H).
+Note that (N^{\mathrm{ts}}) and (N^{\mathrm{dps}}) are not necessarily equal. TS uses deterministic task arrivals, whereas DPS adds noise to task inter-arrival times. Therefore, the two schedulers may release different numbers of jobs within the same observation window (H).
 
-For each scheduler, the script counts the successful attack instances that satisfy the required task-execution order for the following attacks:
+For each scheduler, we count the successful attack instances that satisfy the required task-execution order for:
 
-* Anterior attack
-* Posterior attack
-* Pincer attack
+* **Anterior attacks**
+* **Posterior attacks**
+* **Pincer attacks**
 
-Let (AS^{\mathrm{ts}}) and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances observed under TS and DPS, respectively.
+Let (AS^{\mathrm{ts}}) and (AS^{\mathrm{dps}}) denote the numbers of successful attack instances under TS and DPS, respectively.
 
 The normalized attack likelihood under TS is defined as:
 
@@ -202,15 +204,23 @@ $$
 \frac{AS^{\mathrm{dps}}}{N^{\mathrm{dps}}}.
 $$
 
-This normalization accounts for differences in the numbers of jobs released by the two schedulers and enables a fair comparison of attack likelihood between TS and DPS.
+This normalization accounts for differences in the numbers of jobs released under TS and DPS, enabling a fair comparison of attack likelihood between the two schedulers.
 
-Run the normalized attack experiment using:
+Run the experiment using:
 
 ```bash
 python normalized.py
 ```
 
-The script records the job counts, successful attack instances, and normalized attack likelihoods for TS and DPS. It stores both individual task-set results and aggregated statistics for each utilization level.
+The script records:
+
+* The numbers of victim and target jobs under TS and DPS.
+* The numbers of successful attack instances.
+* The normalized attack likelihoods.
+* Individual task-set results.
+* Aggregated results for each utilization level.
+
+
 
 
 ### Sensitivity-Parameter Sweep
