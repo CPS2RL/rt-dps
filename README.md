@@ -38,8 +38,7 @@ The experiments evaluate:
 2. How frequently anterior, posterior, and pincer attack patterns occur.
 3. How attack intensity changes after normalization by the number of attacker and victim jobs.
 4. How the inter-arrival-time sensitivity parameter affects attack opportunities.
-5. Whether scheduler-induced response-time jitter can violate a control system's stability margin.
-6. How randomization changes the number of unique execution traces.
+
 
 ## Attack Patterns
 
