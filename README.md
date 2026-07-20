@@ -174,7 +174,7 @@ $$
 N^{\mathrm{dps}} = N_v^{\mathrm{dps}} + N_t^{\mathrm{dps}}.
 $$
 
-Note that (N^{\mathrm{ts}}) and (N^{\mathrm{dps}}) are not necessarily equal. TS uses deterministic task arrivals, whereas DPS adds noise to task inter-arrival times. Therefore, the two schedulers may release different numbers of jobs within the same observation window (H).
+Note that $`N^{\mathrm{ts}}`$ and $`N^{\mathrm{dps}}`$ are not necessarily equal. TS uses deterministic task arrivals, whereas DPS adds noise to task inter-arrival times. Therefore, the two schedulers may release different numbers of jobs within the same observation window (H).
 
 For each scheduler, we count the successful attack instances that satisfy the required task-execution order for:
 
