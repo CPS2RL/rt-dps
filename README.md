@@ -18,8 +18,6 @@ This repository contains the source code and experiment scripts used to reproduc
   * [Sensitivity-Parameter Sweep](#sensitivity-parameter-sweep)
   * [Example Schedule Plot](#example-schedule-plot)
   * [Jitter-Margin Analysis](#jitter-margin-analysis)
-* [Generated Outputs](#generated-outputs)
-* [Reproducibility Notes](#reproducibility-notes)
 * [Citation](#citation)
 
 ## Objective of the Paper
@@ -284,41 +282,6 @@ jupyter notebook "jitter_margin/jitter margin curve.ipynb"
 
 Execute all notebook cells to calculate and visualize the relationship between latency and allowable response-time jitter.
 
-## Generated Outputs
-
-| Experiment                              | Script                                 | Output                                                |
-| --------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| Anterior, posterior, and pincer attacks | `ap_ant_post_pin.py`                   | `trace_attack_counts_aRP_n5.xlsx`                     |
-| Control-stability analysis              | `ap_butterfly.py`                      | `stability_violation_n15.xlsx`                        |
-| Normalized attack analysis              | `normalized.py`                        | `new_exp_n15.xlsx`                                    |
-| Δη sensitivity analysis                 | `delta_eta_sweep_attack_plot.py`       | CSV, PDF, and PNG files in `delta_eta_sweep_results/` |
-| Example schedule                        | `example_timing_plot_generation.ipynb` | Example timing-plot figure                            |
-| Jitter-margin analysis                  | `jitter margin curve.ipynb`            | Jitter-margin curve                                   |
-
-The generated Excel workbooks contain separate sheets for individual task-set results and aggregated summaries.
-
-## Reproducibility Notes
-
-The experiment scripts use randomized task-set generation and randomized attacker–victim selection. Random seeds are recorded in the generated results or printed in the terminal so that individual runs can be reproduced.
-
-Important experiment parameters are defined in each script, including:
-
-```text
-Number of tasks
-Total utilization
-Number of task sets
-Number of simulation windows
-Hyperperiod cap
-Privacy parameter ε
-J parameter
-Sensitivity parameter Δη
-Period range
-Attacker and victim priority relationship
-```
-
-To reproduce a specific configuration from the paper, verify these parameters before running the corresponding experiment.
-
-The scripts use UUniFast to generate task utilizations and Rate-Monotonic priority assignment to schedule the generated real-time tasks.
 
 ## Citation
 
